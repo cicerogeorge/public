@@ -11,9 +11,9 @@ id int(11) NOT NULL AUTO_INCREMENT,
 company_id int(11) DEFAULT NULL,
 type_message varchar(750) DEFAULT NULL,
 message varchar(765) DEFAULT NULL,
-created_at datetime(0) DEFAULT NULL,
-updated_at datetime(0) DEFAULT NULL,
-deleted_at datetime(0) DEFAULT NULL,
+created_at datetime DEFAULT NULL,
+updated_at datetime DEFAULT NULL,
+deleted_at datetime DEFAULT NULL,
 PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
@@ -27,9 +27,9 @@ field varchar(600) DEFAULT NULL,
 old_value blob,
 new_value blob,
 viewed tinyint(1) DEFAULT NULL,
-created_at datetime(0) DEFAULT NULL,
-updated_at datetime(0) DEFAULT NULL,
-deleted_at datetime(0) DEFAULT NULL,
+created_at datetime DEFAULT NULL,
+updated_at datetime DEFAULT NULL,
+deleted_at datetime DEFAULT NULL,
 PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
@@ -39,14 +39,14 @@ ALTER TABLE `companies_services` ADD COLUMN `priority` int(11) UNSIGNED NOT NULL
 CREATE TABLE `timetables_vacations` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `companies_user_id` int(11) NOT NULL,
-`vacation_date` datetime(0) NOT NULL,
+`vacation_date` datetime NOT NULL,
 `vacation_type` int(1) unsigned NOT NULL,
 `approved` int(1) unsigned NOT NULL DEFAULT 0,
 `has_appointments` int(1) unsigned NOT NULL DEFAULT 0,
 `inherit_cu_id` int(1) unsigned NOT NULL DEFAULT 0,
-`created_at` datetime(0) NOT NULL,
-`updated_at` datetime(0) DEFAULT NULL,
-`deleted_at` datetime(0) DEFAULT NULL,
+`created_at` datetime NOT NULL,
+`updated_at` datetime DEFAULT NULL,
+`deleted_at` datetime DEFAULT NULL,
 PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
